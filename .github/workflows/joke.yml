@@ -1,0 +1,16 @@
+name: XOps Mini Automation - Joke Fetcher
+
+on:
+  push:
+    branches: [ master ]      
+  workflow_dispatch:           
+
+jobs:
+  fetch-joke:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fetch a random joke
+        run: |
+          echo "Fetching a joke from Official Joke API..."
+          curl -s https://official-joke-api.appspot.com/random_joke | jq '.setup + " - " + .punchline'

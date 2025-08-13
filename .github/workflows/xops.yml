@@ -1,0 +1,13 @@
+name: XOps Mini Automation
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print XOps message
+        run: echo "XOps is awesome!"
